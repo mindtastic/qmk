@@ -27,9 +27,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "rgblight.h"
 
 void keyboard_post_init_user() {
-print("Hello");
-
-rgblight_enable_noeeprom(); // enables Rgb, without saving settings
-rgblight_sethsv_noeeprom(180, 255, 255); // sets the color to teal/cyan without saving
-rgblight_mode_noeeprom(RGBLIGHT_MODE_KNIGHT + 3); // sets mode to Fast breathing without saving
+    rgblight_enable_noeeprom();
+    // Set up RGB effects on _only_ the first LED (index 0):
+    //rgblight_set_effect_range(0, 1);
+    // Set LED effects to breathing mode in a "terminal-green" type color:
+    rgblight_sethsv_noeeprom(50, 255, 100);
+    rgblight_mode_noeeprom(RGBLIGHT_EFFECT_BREATHING + 2);
+    // Init the second LED to a static color:
 }
