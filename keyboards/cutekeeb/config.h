@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "config_common.h"
 
 /* matrix definitions */	
 
@@ -24,7 +25,10 @@
 /*
  * WS2812 Underglow Matrix options
  */
-#define RGBLED_NUM 6
+
+#define DIRECT_PINS {{ B5 }}
+
+#define RGBLED_NUM 12
 #define DRIVER_LED_TOTAL RGBLED_NUM
 
 #define RGB_DI_PIN B1
@@ -34,7 +38,7 @@
 #define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
 
 #define RGBLIGHT_ANIMATIONS
-#define ENABLE_RGB_MATRIX_BREATHING
+#define ENABLE_RGB_MATRIX_CYCLE_ALL
 
 /* disable action features */
 //#define NO_ACTION_LAYER
